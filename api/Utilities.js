@@ -57,12 +57,13 @@ module.exports.apiKeyValidate = (req, res, next) => {
 
 module.exports.signAccessToken = (payload) => { 
     try {
+        console.log('payload', payload)
         const JWT = require('jsonwebtoken')
         return new Promise((resolve, reject) => {
             const options = {
                 expiresIn: '7d',
                 issuer: 'https://mernjs.github.io/create-mern-app',
-                audience: payload.id.toString()
+                audience: payload._id.valueOf()
             }
             JWT.sign(payload, process.env.JWT_SECRET, options, (error, token) => {
                 if (error) {

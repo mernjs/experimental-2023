@@ -1,5 +1,5 @@
 require('dotenv').config()
-global.Sequelize    = require('sequelize');
+require('./api/database/dbconfig/DB_mongodb_connection');
 const bodyParser 	= require('body-parser')
 const express 		= require('express')
 const cors 		    = require('cors')
@@ -15,11 +15,20 @@ nextApp.prepare().then(() => {
     const app 	= express();
 
     app.use(cors())
-    app.use(bodyParser.json({limit: '10mb', extended: true}))
-    app.use(bodyParser.urlencoded({limit: '10mb', extended: true}))
-
-    app.set('view engine', 'ejs');
-    app.set('views', path.join(__dirname, './api/views'));
+    // app.use(bodyParser.json({
+    //     verify: (req, res, buf) => {
+    //       req.rawBody = buf
+    //     }
+    // }))
+    // app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
+    app.use((req, res, next) => {
+        if (req.originalUrl === '/webhook') {
+          next();
+        } else {
+          express.json()(req, res, next);
+        }
+    });
+      
     app.use(express.static(path.join(__dirname, './public')));
 
     app.use(require(`./api/App`));

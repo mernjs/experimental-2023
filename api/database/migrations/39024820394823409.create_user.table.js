@@ -1,33 +1,13 @@
-'use strict';
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      firstName: {
-        type: Sequelize.STRING
-      },
-      lastName: {
-        type: Sequelize.STRING
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
-  },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
-  }
-};
+    up(db) {
+        return db.collection('users').insertMany([
+            { name: "ABC1", email: 'abc1@getnada.com' },
+            { name: "ABC2", email: 'abc2@getnada.com' },
+            { name: "ABC3", email: 'abc3@getnada.com' },
+        ])
+    },
+    
+    down(db) {
+        return db.collection('users').drop()
+    }
+}

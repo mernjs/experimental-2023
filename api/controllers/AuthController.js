@@ -1,54 +1,44 @@
-const bcrypt = require('bcrypt')
 const Utilities = require('../Utilities')
-const { User } = require('../models')
+const User = require('../models/User')
 
 class AuthController {
 
     async login(req, res){
         try {
-            let user = await User.findOne({where: { email: req.body.email }})
-            user = user.toJSON()
+            const user = await User.findOne({ email: req.body.email })
             if (!user) return Utilities.apiResponse(res, 422, 'User Not Registered', [])
-            const isMatch = await bcrypt.compare(req.body.password, user.password)
+            const isMatch = await user.isValidPassword(req.body.password)
             if (!isMatch) return Utilities.apiResponse(res, 422, 'Email or Password not valid', [])
-            delete user.password
-            const accessToken = await Utilities.signAccessToken(user)
-           return Utilities.apiResponse(res, 200, 'User Loggedin Successfully!', {...user, accessToken})
+            delete user._doc.password
+            delete user._doc.__v
+            const accessToken = await Utilities.signAccessToken(user._doc)
+            Utilities.apiResponse(res, 200, 'User Loggedin Successfully!', {...user._doc, accessToken})
         } catch (error) {
-            res.send(error.message)
-            return Utilities.apiResponse(res, 500, error)
+            Utilities.apiResponse(res, 500, error)
         }
     }
 
     async signup(req, res){
         try {
-            const doesExist = await User.findOne({where: { email: req.body.email }})
+            const doesExist = await User.findOne({ email: req.body.email })
             if (doesExist) return Utilities.apiResponse(res, 422, 'Email is already been registered')
-            const salt = await bcrypt.genSalt(10)
-            const hashedPassword = await bcrypt.hash(req.body.password, salt)
-            let savedUser = await User.create({...req.body, password: hashedPassword})
-            savedUser = savedUser.toJSON()
-            delete savedUser.password
-            const accessToken = await Utilities.signAccessToken(savedUser)
-            return Utilities.apiResponse(res, 200, 'User Created Successfully!', {...savedUser, accessToken})
-        } catch (error) {
-            res.send(error.message)
-            Utilities.apiResponse(res, 500, error)
-        }
-    }
-
-    async users(req, res){
-        try {
-            const users = await User.findAll()
-            Utilities.apiResponse(res, 200, 'Get Users Successfully', users)
+            const user = new User(req.body)
+            const savedUser = await user.save()
+            let data = {
+                _id: savedUser._id,
+                name: savedUser.name,
+                email: savedUser.email
+            }
+            const accessToken = await Utilities.signAccessToken(data)
+            Utilities.apiResponse(res, 200, 'User Created Successfully!', {...data, accessToken})
         } catch (error) {
             Utilities.apiResponse(res, 500, error)
         }
     }
 
-    async getUserByID(req, res){
+    async getUserDetails(req, res){
         try {
-            const user = await User.findOne({where: {id: req.query.user_id}})
+            const user = await User.findOne({_id: req.payload._id})
             Utilities.apiResponse(res, 200, 'Get User Details Successfully', user)
         } catch (error) {
             Utilities.apiResponse(res, 500, error)
