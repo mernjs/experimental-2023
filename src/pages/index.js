@@ -1,11 +1,10 @@
 import React from 'react';
 import { Header, Footer } from '../components';
 import styled from 'styled-components';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
-    // const user = useSelector((state) => state.auth.user);
-    const user = null
+    const user = useSelector((state) => state.auth.user);
     return (
         <>
             <ScrollView>

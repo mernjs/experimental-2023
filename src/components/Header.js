@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-import '../App.css'
-// import { useSelector, useDispatch } from 'react-redux';
-// import { AuthActions } from '../reducers/AuthReducer';
+import { Link, navigate } from 'gatsby';
+import '../App.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { AuthActions } from '../reducers/AuthReducer';
 
 const Header = () => {
-    // const dispatch = useDispatch();
-    // const user = useSelector((state) => state.auth.user);
-    const user = null
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.auth.user);
 
     const logout = () => {
-        // dispatch(AuthActions.logout());
+        dispatch(AuthActions.logout());
+        navigate('/login');
     };
 
     return (

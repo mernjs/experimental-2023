@@ -1,10 +1,10 @@
 import React from 'react';
 import { Header, Footer, TextInput, H2, Button } from '../components';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
-// import { useDispatch } from 'react-redux';
+import { Link, navigate } from 'gatsby';
+import { useDispatch } from 'react-redux';
 import apiRequest, { showToast } from '../Utilities';
-// import { AuthActions } from '../reducers/AuthReducer';
+import { AuthActions } from '../reducers/AuthReducer';
 import { useForm, Controller } from 'react-hook-form';
 
 const Signup = () => {
@@ -14,13 +14,13 @@ const Signup = () => {
         formState: { isSubmitting, errors },
     } = useForm({ mode: 'onChange' });
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const signup = async (payload) => {
         try {
             const response = await apiRequest.post(`signup`, payload);
-            console.log("Response ===>>>", response)
-            // dispatch(AuthActions.setAuth(response.data.data));
+            dispatch(AuthActions.setAuth(response.data.data));
+            navigate('/');
         } catch (error) {
             showToast(error?.response?.data?.message, 'error');
         }

@@ -9,7 +9,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
     async (config) => {
         // const token = store.getState()?.auth?.user?.accessToken || '';
-        const token = ""
+        const token = '';
         if (token) config.headers.Authorization = `${token}`;
         return config;
     },
@@ -22,11 +22,9 @@ export default instance;
 
 export const history = createBrowserHistory();
 
-export const requestStart = (loaderName) => {
-};
+export const requestStart = (loaderName) => {};
 
-export const requestError = (loaderName, message) => {
-};
+export const requestError = (loaderName, message) => {};
 
 export const requestSuccess = (loaderName, message) => {
     if (message) toast.success(message);
