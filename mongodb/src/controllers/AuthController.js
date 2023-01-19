@@ -9,7 +9,7 @@ class AuthController {
                 return Utilities.apiResponse(
                     res,
                     422,
-                    'User Not Registered',
+                    'User Not Registered......',
                     [],
                 );
             }
