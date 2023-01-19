@@ -3,9 +3,11 @@ const express = require('express');
 const Route = express.Router();
 
 const AuthController = require('./controllers/AuthController');
+
 /**
  * APIs V1 Routes
  */
+
 Route.route('/')
     .get((req, res) =>
         Utilities.apiResponse(res, 200, 'Create MERN App', {
