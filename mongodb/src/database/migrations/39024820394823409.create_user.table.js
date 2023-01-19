@@ -1,9 +1,9 @@
 module.exports = {
     up(db) {
         return db.collection('users').insertMany([
-            { name: 'ABC1', email: 'abc1@getnada.com' },
-            { name: 'ABC2', email: 'abc2@getnada.com' },
-            { name: 'ABC3', email: 'abc3@getnada.com' },
+            { name: 'ABC11', email: 'abc11@getnada.com' },
+            { name: 'ABC22', email: 'abc22@getnada.com' },
+            { name: 'ABC33', email: 'abc33@getnada.com' },
         ]);
     },
 
