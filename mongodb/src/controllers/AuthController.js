@@ -8,8 +8,8 @@ class AuthController {
             if (!user) {
                 return Utilities.apiResponse(
                     res,
-                    422,
-                    'User Not Registered......',
+                    400,
+                    'User Not Found......',
                     [],
                 );
             }
