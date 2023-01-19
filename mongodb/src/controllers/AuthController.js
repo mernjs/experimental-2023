@@ -9,7 +9,7 @@ class AuthController {
                 return Utilities.apiResponse(
                     res,
                     404,
-                    'User Not Found In Our Portal......',
+                    'User Not Found In Our Portal.....'
                     [],
                 );
             }
