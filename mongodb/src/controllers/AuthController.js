@@ -8,8 +8,8 @@ class AuthController {
             if (!user) {
                 return Utilities.apiResponse(
                     res,
-                    404,
-                    'User Not Found In Our Portal.....'
+                    400,
+                    'User Not Found In Portal.....'
                     [],
                 );
             }
