@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
+    
     const user = useSelector((state) => state.auth.user);
+    
     return (
         <>
             <ScrollView>
