@@ -3,6 +3,7 @@ const Utilities = require('../Utilities');
 const { User } = require('../models');
 
 class AuthController {
+    
     async login(req, res) {
         try {
             let user = await User.findOne({ where: { email: req.body.email } });
