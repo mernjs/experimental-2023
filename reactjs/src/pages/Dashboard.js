@@ -2,6 +2,7 @@ import React from 'react';
 import { Header, Footer } from '../components';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import HorizontalScrolling from 'components/HorizontalScrolling';
 
 const Dashboard = () => {
     const user = useSelector((state) => state.auth.user);
@@ -10,6 +11,7 @@ const Dashboard = () => {
             <ScrollView>
                 <Header />
                 <Container>
+                    <HorizontalScrolling/>
                     <h1>Dashboard</h1>
                     <p>
                         <b>Name</b>: {user.name}
