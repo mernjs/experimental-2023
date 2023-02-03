@@ -1,0 +1,14 @@
+{
+  "name": "web-scrape",
+  "version": "1.0.0",
+  "description": "Web Scrapping",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vijay Pratap Singh",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.5.0"
+  }
+}
