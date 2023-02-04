@@ -17,7 +17,11 @@ const ReportForm = () => {
 			window.open(`https://crcf.sbi.co.in/ccf/home/GetFeedback?TxnDate=${payload.TxnDate}&TxnType=${payload.TxnType}&JNo=${payload.JNo}`);
 			showToast('Form Submitted Successfully', 'success');
 			setTimeout(() => {
-				reset();
+				reset({
+					TxnDate: "",
+					TxnType: "",
+					JNo: ""
+				});
 			}, 100);
 		} catch (error) {
 			showToast(error?.response?.data?.message, 'error');
