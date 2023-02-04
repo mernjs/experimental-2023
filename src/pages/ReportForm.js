@@ -15,10 +15,10 @@ const ReportForm = () => {
 	const onSubmit = async (payload) => {
 		try {
 			window.open(`https://crcf.sbi.co.in/ccf/home/GetFeedback?TxnDate=${payload.TxnDate}&TxnType=${payload.TxnType}&JNo=${payload.JNo}`);
-			showToast("Form Submitted Successfully", 'success');
+			showToast('Form Submitted Successfully', 'success');
 			setTimeout(() => {
-				reset()
-			}, 100)
+				reset();
+			}, 100);
 		} catch (error) {
 			showToast(error?.response?.data?.message, 'error');
 		}
