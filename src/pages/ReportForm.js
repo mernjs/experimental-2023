@@ -18,9 +18,9 @@ const ReportForm = () => {
 			showToast('Form Submitted Successfully', 'success');
 			setTimeout(() => {
 				reset({
-					TxnDate: "",
-					TxnType: "",
-					JNo: ""
+					TxnDate: '',
+					TxnType: '',
+					JNo: '',
 				});
 			}, 100);
 		} catch (error) {
