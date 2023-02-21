@@ -1,0 +1,57 @@
+{
+	"name": "react-auth",
+	"version": "1.0.6",
+	"description": "react-auth",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm.js",
+	"scripts": {
+		"lint": "eslint .",
+		"build": "rm -rf dist && rollup -c",
+		"start": "start-storybook",
+		"example": "npm run dev --prefix example",
+		"client": "npm run ins --prefix example",
+		"lint:fix": "eslint --fix --ext .js,.jsx .",
+		"dev": "concurrently \"npm run build\" \"npm start\"  \"npm run client\" \"npm run example\"",
+		"upgrade": "npx npm-check-updates &&  npx npm-check-updates -u",
+		"prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss}'"
+	},
+	"author": "Vijay Pratap Singh",
+	"license": "MIT",
+	"peerDependencies": {
+		"react": ">=16.8.0",
+		"react-dom": ">=16.8.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.20.12",
+		"@babel/preset-env": "^7.20.2",
+		"@babel/preset-react": "^7.18.6",
+		"@rollup/plugin-babel": "^6.0.3",
+		"@rollup/plugin-commonjs": "^24.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.1",
+		"@rollup/plugin-terser": "^0.3.0",
+		"@storybook/react": "^6.5.15",
+		"concurrently": "^7.6.0",
+		"eslint": "^8.33.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-plugin-react": "^7.32.2",
+		"prettier": "^2.8.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"rollup": "^2.79.1",
+		"rollup-plugin-import-css": "^3.1.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mernjs/react-auth.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mernjs/react-auth/issues"
+	},
+	"homepage": "https://github.com/mernjs/react-auth#readme",
+	"dependencies": {
+		"@hookform/error-message": "^2.0.1",
+		"react-hook-form": "^7.43.1",
+		"react-router-dom": "^6.8.1",
+		"styled-components": "^5.3.6"
+	}
+}
