@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+		<title>Filter Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+		<style>
+			.move {
+				width: 400px;
+				height: 70px;
+				border-radius: 100px;
+				background-color: rgb(38, 0, 255);
+				white-space: nowrap;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			.move ul {
+				list-style-type: none;
+			}
+			.move ul li{
+				filter: url(#blur);
+				-moz-filter: url(#blur);
+				-webkit-filter: url(#blur);
+				will-change: transform;
+			}
+			.move ul li {
+				color: white;
+				padding-bottom: 20px;
+				padding-left: 100px;
+				font-family: 'Open Sans', sans-serif;
+				-moz-transform: translateY(100%);
+				-webkit-transform: translateY(100%);  
+				transform: translateY(100%);
+				-moz-animation: move 0.5s linear infinite;
+				-webkit-animation: move 0.5s linear infinite;
+				animation: move 0.5s linear infinite;
+			}
+			@-moz-keyframes move {
+				0%   {
+					-moz-transform: translateY(100%); 
+				}
+				100% { 
+					-moz-transform: translateY(-100%); 
+				}
+				700% { 
+					-moz-transform: translateY(-700%); 
+				}
+				1000% { 
+					-moz-transform: translateY(-1000%); 
+				}
+			}
+			@-webkit-keyframes move {
+				0%   { 
+					-webkit-transform: translateY(100%); 
+				}
+				100% { 
+					-webkit-transform: translateY(-100%); 
+				}
+				700% { 
+					-webkit-transform: translateY(-700%); 
+				}
+				1000% { 
+					-webkit-transform: translateY(-1000%); 
+				}
+			}
+			@keyframes move {
+				0%   { 
+					-moz-transform: translateY(100%); 
+					-webkit-transform: translateY(100%); 
+					transform: translateY(100%);         
+				}
+				100% { 
+					-moz-transform: translateY(-100%); 
+					-webkit-transform: translateY(-100%);
+					transform: translateY(-100%); 
+				}
+				700% { 
+					-moz-transform: translateY(-700%); 
+					-webkit-transform: translateY(-700%);
+					transform: translateY(-700%); 
+				}
+				1000% { 
+					-moz-transform: translateY(-1000%); 
+					-webkit-transform: translateY(-1000%);
+					transform: translateY(-1000%); 
+				}
+			}
+		</style>
+	</head>
+
+  	<body>
+    	<div class="container">
+
+			<svg>
+				<filter id="blur">
+					<feGaussianBlur stdDeviation="0,0" id="blurId"></feGaussianBlur>
+				</filter>
+			</svg>
+
+			<div class="move">
+				<ul>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+					<li>Vijay Pratap Singh</li>
+					<li>Sumit Dey</li>
+					<li>Vikash Tomar</li>
+					<li>Vishal Mahato</li>
+					<li>Vijay Pal Gautam</li>
+					<li>Danish Rana</li>
+					<li>Sameer Khan</li>
+				</ui>
+			</div>
+  		</div>
+
+		<script>
+			var ele = document.getElementById("blurId");
+			var isVisible = false
+			function blur(){
+				if(!isVisible){
+					const randNum = Math.floor(10 + Math.random() * 50)
+					ele.setAttribute("stdDeviation", `0,${randNum}`);
+					requestAnimationFrame(blur)
+				}else{
+					ele.setAttribute("stdDeviation", `0,0`);
+				}
+			}
+			requestAnimationFrame(blur)
+		</script>
+  </body>
+</html>
