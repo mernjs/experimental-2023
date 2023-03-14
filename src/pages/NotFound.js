@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
 
 const NotFound = () => {
 	return (

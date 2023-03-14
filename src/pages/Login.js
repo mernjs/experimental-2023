@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Footer, TextInput, H2, Button } from '../components';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import apiRequest, { showToast } from '../Utilities';
 import { AuthActions } from '../reducers/AuthReducer';
 import { useForm, Controller } from 'react-hook-form';
@@ -80,14 +80,14 @@ const Login = () => {
 export default Login;
 
 const ScrollView = styled.div`
-min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
 `;
 
 const Container = styled.div`
-align-content: center;
-padding-top: 50px;
-min-height: 100%;
-margin: auto;
-width: 400px;
-max-width: 100%;
+    align-content: center;
+    padding-top: 50px;
+    min-height: 100%;
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
 `;
