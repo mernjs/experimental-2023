@@ -2,19 +2,20 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NotFound = () => {
-    return (
-        <>
-            <ScrollView>
-                <Header />
-                <Container>
-                    <h1>404 - Page Not Found</h1>
-                </Container>
-            </ScrollView>
-            <Footer />
-        </>
-    );
+	return (
+		<>
+			<ScrollView>
+				<Header />
+				<Container>
+					<h1>404 - Page Not Found</h1>
+				</Container>
+			</ScrollView>
+			<Footer />
+		</>
+	);
 };
 
 export default NotFound;
