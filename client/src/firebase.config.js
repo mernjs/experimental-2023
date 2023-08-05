@@ -4,13 +4,7 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTlMDbeI3-RSgAZACYBNUIaltAvJ3DxCs",
-  authDomain: "whatsapp-vprtsingh.firebaseapp.com",
-  projectId: "whatsapp-vprtsingh",
-  storageBucket: "whatsapp-vprtsingh.appspot.com",
-  messagingSenderId: "331428528253",
-  appId: "1:331428528253:web:b7a014cef9412f1bbaf114",
-  measurementId: "G-XXNW4KB2LY"
+  
   // apiKey: process.env.REACT_APP_FIREBASE_KEY,
   // authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   // projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
