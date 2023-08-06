@@ -59,7 +59,8 @@ const VideoTranscribe = () => {
     };
 
     return (
-        <div>
+        <div style={{padding: '20px'}}>
+            <h3>I have created samples for both video transcriptions and job description generation.</h3>
             <div style={{ margin: '20px' }}>
                 <label>
                     <input
@@ -78,7 +79,7 @@ const VideoTranscribe = () => {
                             height: '20px',
                             fontSize: '20px'
                         }}
-                    />Job Description</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                    /><span style={{margin: '10px'}}>Job Description</span></label> &nbsp;&nbsp;&nbsp;&nbsp;
 
                 <label>
                     <input
@@ -97,7 +98,7 @@ const VideoTranscribe = () => {
                             height: '20px',
                             fontSize: '20px'
                         }}
-                    />Video Transcribe</label>
+                    /><span style={{margin: '10px'}}>Video Transcribe</span></label>
             </div>
 
             {type === 'jd' &&

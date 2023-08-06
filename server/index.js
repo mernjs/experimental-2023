@@ -44,7 +44,7 @@ function proceedWithApiCall(inputFilePath) {
     form.append('file', fs.readFileSync(inputFilePath), inputFilePath);
     form.append('model', 'whisper-1');
     const headers = {
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer ',
         'Content-Type': 'multipart/form-data',
         ...form.getHeaders(),
     };
