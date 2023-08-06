@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import SvgComponent from "../components/SvgComponent";
 import SignupForm from "../components/signup/SignUpForm";
 import { useNavigate } from "react-router-dom";
+import VideoTranscribe from "../components/VideoTranscribe";
 
 const Login = () => {
     const [isSignupFormVisible, setIsSignupFormVisible] = useState(false);
@@ -17,6 +18,8 @@ const Login = () => {
             navigate("/login");
         }
     };
+
+    return <section className="chatBox"><VideoTranscribe/></section>
 
     return (
         <>

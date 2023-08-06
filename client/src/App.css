@@ -303,8 +303,8 @@ form button {
 @media (hover: hover) {
   button:hover {
     cursor: pointer;
-    background: #212023;
-    border-radius: 20%;
+    /* background: #212023; */
+    /* border-radius: 20%; */
   }
 }
 

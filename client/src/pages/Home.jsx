@@ -82,7 +82,7 @@ const Home = () => {
 						</svg>
 					</button>
 				</div>
-				<h1>TalkBot</h1>
+				<h1>VijayGPT</h1>
 			</header>
 
 			{showMenu && (
