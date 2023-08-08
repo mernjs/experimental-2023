@@ -8,14 +8,16 @@ const App = () => {
 
 	const [data, setData] = useState(null)
 	const [query, setQuery] = useState("")
-	const [location, setLocation] = useState("")
+	const [latitude, setLatitude] = useState("")
+	const [longitude, setLongitude] = useState("")
 
 	const getCurrentLatLog = () => {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				const latitude = position.coords.latitude;
 				const longitude = position.coords.longitude;
-				setLocation({ latitude, longitude });
+				setLatitude(latitude);
+				setLongitude(longitude);
 			}, (err) => {
 				console.log(err.message)
 			});
@@ -29,7 +31,7 @@ const App = () => {
 	}, [])
 
 	const getData = () => {
-		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query || ""}&lat=${location?.latitude || ""}&lon=${location?.longitude || ""}&appid=fe4feefa8543e06d4f3c66d92c61b69c&units=metric`, {
+		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&lat=${latitude}&lon=${longitude}&appid=fe4feefa8543e06d4f3c66d92c61b69c&units=metric`, {
 			method: "get"
 		}).then((res) => {
 			return res.json()
@@ -43,7 +45,7 @@ const App = () => {
 
 	useEffect(() => {
 		getData()
-	}, [location])
+	}, [latitude, longitude])
 
 	const handleChange = (e) => {
 		setQuery(e.target.value)
