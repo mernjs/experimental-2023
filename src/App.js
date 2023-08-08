@@ -45,6 +45,7 @@ const App = () => {
 
 	useEffect(() => {
 		getData()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [latitude, longitude])
 
 	const handleChange = (e) => {
